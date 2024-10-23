@@ -1,6 +1,6 @@
 const fs = require("fs");
 const express = require("express");
-const PORT = 3001;
+const port = process.env.PORT || 3001;
 const path = require("path");
 const db = require("./db/db.json");
 const app = express();
@@ -96,6 +96,6 @@ app.delete("/api/notes/:id", (req, res) => {
   res.status(200).json(response);
 });
 
-app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
 });
